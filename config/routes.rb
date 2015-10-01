@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
-
-  # get 'users/new'
 
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
@@ -16,6 +13,7 @@ Rails.application.routes.draw do
   # get 'welcome' => 'users#index'
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
